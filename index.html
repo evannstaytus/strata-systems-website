@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #F7F8F5; color: #2B2B2B; font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #2B2B2B; text-decoration: none; }
+  a:hover { color: #55B944; }
+  ::placeholder { color: #9A9E97; }
+</style>
+</helmet>
+<div style="background:#F7F8F5; min-height:100vh">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(247,248,245,0.92); backdrop-filter:blur(10px); borderBottom:1px solid #E0E0DC">
+    <div style="max-width:1200px; margin:0 auto; padding:16px 40px; display:flex; align-items:center; justify-content:space-between; gap:32px">
+      <a href="#top" style="display:flex; align-items:center; gap:12px">
+        <img src="assets/strata-mark.png" alt="Strata Systems" style="height:30px; width:auto; display:block" />
+        <span style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:16px; letterSpacing:0.14em; textTransform:uppercase">Strata Systems</span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:36px">
+        <a href="#about" style="fontSize:14px; fontWeight:500; letterSpacing:0.02em">About</a>
+        <a href="#projects" style="fontSize:14px; fontWeight:500; letterSpacing:0.02em">Projects</a>
+        <a href="#contact" style="fontSize:14px; fontWeight:500; letterSpacing:0.02em">Contact</a>
+        <a href="#contact" style="background:#55B944; color:#0F2A0B; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:14px; padding:11px 20px; clipPath:polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%)" style-hover="background:#4AA83A">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="max-width:1200px; margin:0 auto; padding:120px 40px 0">
+    <div style="display:grid; gridTemplateColumns:minmax(0,1.35fr) minmax(0,1fr); gap:64px; alignItems:end">
+      <div>
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#55B944; marginBottom:28px">Utility infrastructure for residential estates</div>
+        <h1 style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:68px; lineHeight:1.02; letterSpacing:-0.02em; margin:0; textWrap:balance">Four utilities.<br />One provider.<br />One agreement.</h1>
+      </div>
+      <p style="margin:0 0 8px; fontSize:18px; lineHeight:1.6; color:#4A4E48; maxWidth:42ch; textWrap:pretty">Strata Systems builds and operates access control, fibre, solar power and water and gas metering for high-end residential estates in South Africa. We carry the capital cost and recover it over a ten-year agreement with the developer and HOA.</p>
+    </div>
+    <div style="display:flex; flexWrap:wrap; gap:16px; marginTop:44px">
+      <a href="#contact" style="background:#55B944; color:#0F2A0B; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:16px; padding:16px 30px; clipPath:polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%)" style-hover="background:#4AA83A">Get in touch</a>
+      <a href="#about" style="border:1px solid #C9CCC4; color:#2B2B2B; fontFamily:'Space Grotesk', sans-serif; fontWeight:500; fontSize:16px; padding:16px 30px" style-hover="border-color:#2B2B2B">How it works</a>
+    </div>
+  </section>
+
+  <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+  <section style="max-width:1200px; margin:96px auto 0; padding:0 40px">
+    <div style="borderTop:1px solid #E0E0DC; display:grid; gridTemplateColumns:repeat(4, minmax(0,1fr))">
+      <div style="padding:28px 28px 28px 0; borderRight:1px solid #E0E0DC">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:38px; letterSpacing:-0.02em">25%</div>
+        <div style="fontSize:14px; color:#5F6360; marginTop:6px; lineHeight:1.5">Saving on electricity against municipal tariffs</div>
+      </div>
+      <div style="padding:28px; borderRight:1px solid #E0E0DC">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:38px; letterSpacing:-0.02em">10 years</div>
+        <div style="fontSize:14px; color:#5F6360; marginTop:6px; lineHeight:1.5">Master service agreement with the HOA</div>
+      </div>
+      <div style="padding:28px; borderRight:1px solid #E0E0DC">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:38px; letterSpacing:-0.02em">R0</div>
+        <div style="fontSize:14px; color:#5F6360; marginTop:6px; lineHeight:1.5">Capital contribution from individual homeowners</div>
+      </div>
+      <div style="padding:28px 0 28px 28px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:38px; letterSpacing:-0.02em">24 hours</div>
+        <div style="fontSize:14px; color:#5F6360; marginTop:6px; lineHeight:1.5">Standby power, supplemented by estate solar</div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ showHeroBand }}" hint-placeholder-val="{{ true }}">
+  <section style="max-width:1200px; margin:72px auto 0; padding:0 40px">
+    <img src="assets/hero-gate.png" alt="Estate gatehouse at dusk" style="display:block; width:100%; height:520px; objectFit:cover; border:1px solid #E0E0DC" />
+  </section>
+  </sc-if>
+
+  <section id="about" style="max-width:1200px; margin:0 auto; padding:120px 40px 0">
+    <div style="display:grid; gridTemplateColumns:200px minmax(0,1fr); gap:64px">
+      <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#8A8F86">01 / Overview</div>
+      <div>
+        <p style="margin:0; fontSize:26px; lineHeight:1.45; letterSpacing:-0.01em; maxWidth:62ch; textWrap:pretty">Estates normally buy access control, connectivity, power and metering from four or five separate suppliers, each with its own contract, hardware and support line. Strata Systems consolidates all of it behind one bulk meter and one platform.</p>
+        <p style="margin:24px 0 0; fontSize:17px; lineHeight:1.65; color:#4A4E48; maxWidth:62ch; textWrap:pretty">We fund the infrastructure — fibre reticulation, bulk gas, solar panels and storage, metering integration — and operate it under a ten-year master service agreement with the developer and the HOA. Residents deal with a single provider through the Strata Systems app, verify their own consumption in real time, and pay 25% less for electricity than the municipal tariff. At the end of the term the HOA can extend the agreement or take first refusal on the infrastructure at market value.</p>
+      </div>
+    </div>
+
+    <div style="display:grid; gridTemplateColumns:200px minmax(0,1fr); gap:64px; marginTop:96px">
+      <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#8A8F86">02 / Service pillars</div>
+      <div style="display:grid; gridTemplateColumns:repeat(2, minmax(0,1fr)); gap:1px; background:#E0E0DC; border:1px solid #E0E0DC">
+        <div style="background:#F7F8F5; padding:36px 32px 40px">
+          <div style="display:flex; alignItems:baseline; gap:14px; marginBottom:18px">
+            <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; color:#55B944; letterSpacing:0.1em">01</span>
+            <h3 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:24px; letterSpacing:-0.01em">Access control</h3>
+          </div>
+          <p style="margin:0; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:44ch">Facial and licence-plate recognition at the gate, visitor codes generated in the app, and time-bound access with audit trails for contractors and staff.</p>
+        </div>
+        <div style="background:#F7F8F5; padding:36px 32px 40px">
+          <div style="display:flex; alignItems:baseline; gap:14px; marginBottom:18px">
+            <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; color:#55B944; letterSpacing:0.1em">02</span>
+            <h3 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:24px; letterSpacing:-0.01em">Fibre</h3>
+          </div>
+          <p style="margin:0; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:44ch">A fibre-to-the-home backbone designed, built and reticulated by Strata, with the ISP service provided in-house and benchmarked against third-party pricing.</p>
+        </div>
+        <div style="background:#F7F8F5; padding:36px 32px 40px">
+          <div style="display:flex; alignItems:baseline; gap:14px; marginBottom:18px">
+            <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; color:#55B944; letterSpacing:0.1em">03</span>
+            <h3 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:24px; letterSpacing:-0.01em">Solar and power</h3>
+          </div>
+          <p style="margin:0; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:44ch">Estate-wide solar across home and clubhouse roof space with high-capacity storage, load and time-of-use management, and 24-hour standby power.</p>
+        </div>
+        <div style="background:#F7F8F5; padding:36px 32px 40px">
+          <div style="display:flex; alignItems:baseline; gap:14px; marginBottom:18px">
+            <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; color:#55B944; letterSpacing:0.1em">04</span>
+            <h3 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:24px; letterSpacing:-0.01em">Water and gas</h3>
+          </div>
+          <p style="margin:0; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:44ch">Bulk LPG tanks reticulated to every home, smart metering for water, gas and electricity, and full reconciliation and billing back to the HOA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px; margin:0 auto; padding:64px 40px 0">
+    <div style="display:grid; gridTemplateColumns:200px minmax(0,1fr); gap:64px">
+      <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#8A8F86">What the HOA gets</div>
+      <div style="display:grid; gridTemplateColumns:repeat(2, minmax(0,1fr)); gap:28px">
+        <div style="background:#EAF3E4; border:1px solid #DCE7D4; padding:36px 32px 40px">
+          <h3 style="margin:0 0 16px; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:22px; letterSpacing:-0.01em">Levy enforcement at the meter</h3>
+          <p style="margin:0; fontSize:16px; lineHeight:1.6; color:#3E4A39; maxWidth:44ch">Where a homeowner falls behind on levies, the HOA can instruct us to restrict or cut supply to that home. Because every utility runs through our metering, enforcement does not depend on a third-party supplier agreeing to act.</p>
+        </div>
+        <div style="background:#EAF3E4; border:1px solid #DCE7D4; padding:36px 32px 40px">
+          <h3 style="margin:0 0 16px; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:22px; letterSpacing:-0.01em">One number for every fault</h3>
+          <p style="margin:0; fontSize:16px; lineHeight:1.6; color:#3E4A39; maxWidth:44ch">Wi-Fi, gate, power, water or gas — the same contact person handles all of it. No triage between four providers, no dispute about whose fault it is, one line of accountability back to the HOA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="max-width:1200px; margin:0 auto; padding:120px 40px 0">
+    <div style="display:flex; alignItems:end; justifyContent:space-between; gap:40px; borderBottom:1px solid #E0E0DC; paddingBottom:24px">
+      <div>
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#8A8F86; marginBottom:20px">03 / Projects</div>
+        <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:40px; letterSpacing:-0.02em">Estates in the programme</h2>
+      </div>
+      <span style="fontFamily:ui-monospace, SFMono-Regular, Menlo, monospace; fontSize:12px; letterSpacing:0.06em; color:#6B7268; paddingBottom:6px">renders in preparation</span>
+    </div>
+    <div style="display:grid; gridTemplateColumns:repeat(3, minmax(0,1fr)); gap:28px; marginTop:40px">
+      <div>
+        <a href="https://www.lalucestate.co.za" target="_blank" rel="noopener noreferrer" style="display:block">
+          <img src="assets/laluc-dam.jpg" alt="La Luc Estate" style="display:block; width:100%; aspectRatio:4/3; objectFit:cover; border:1px solid #E0E0DC" />
+        </a>
+        <h3 style="margin:18px 0 0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:-0.01em">La Luc Estate</h3>
+        <div style="fontSize:14px; color:#5F6360; marginTop:6px">Franschhoek, Western Cape · 91 stands</div>
+        <div style="display:flex; flexWrap:wrap; gap:6px; marginTop:14px">
+          <span style="background:#EAF3E4; color:#33552B; fontSize:11px; fontWeight:500; letterSpacing:0.06em; textTransform:uppercase; padding:5px 9px">Access</span>
+          <span style="background:#EAF3E4; color:#33552B; fontSize:11px; fontWeight:500; letterSpacing:0.06em; textTransform:uppercase; padding:5px 9px">Fibre</span>
+          <span style="background:#EAF3E4; color:#33552B; fontSize:11px; fontWeight:500; letterSpacing:0.06em; textTransform:uppercase; padding:5px 9px">Solar</span>
+          <span style="background:#EAF3E4; color:#33552B; fontSize:11px; fontWeight:500; letterSpacing:0.06em; textTransform:uppercase; padding:5px 9px">Gas</span>
+        </div>
+      </div>
+      <sc-for list="{{ upcoming }}" as="p" hint-placeholder-count="5">
+        <div>
+          <div style="aspectRatio:4/3; background:repeating-linear-gradient(135deg, #EAF3E4 0px, #EAF3E4 10px, #F2F6EE 10px, #F2F6EE 20px); border:1px solid #E0E0DC; display:flex; alignItems:center; justifyContent:center">
+            <span style="fontFamily:ui-monospace, SFMono-Regular, Menlo, monospace; fontSize:11px; letterSpacing:0.08em; color:#6B7268; background:#F7F8F5; border:1px solid #E0E0DC; padding:7px 12px">More projects coming soon.</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="contact" style="max-width:1200px; margin:120px auto 0; padding:0 40px">
+    <div style="background:#EAF3E4; border:1px solid #DCE7D4; padding:72px 64px; display:grid; gridTemplateColumns:minmax(0,1fr) minmax(0,1fr); gap:80px">
+      <div>
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#5C7A52; marginBottom:20px">04 / Enquiries</div>
+        <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:40px; lineHeight:1.1; letterSpacing:-0.02em">Talk to us about your development</h2>
+        <p style="margin:24px 0 0; fontSize:17px; lineHeight:1.65; color:#3E4A39; maxWidth:40ch; textWrap:pretty">Tell us the stand count, the phase you are in, and where utilities sit in the build programme. We will come back with an indicative scope and tariff position.</p>
+        <div style="marginTop:36px; paddingTop:28px; borderTop:1px solid #DCE7D4; display:flex; flexDirection:column; gap:8px; fontSize:15px; color:#3E4A39">
+          <a href="mailto:hello@stratasystems.co.za" style="color:#3E4A39">hello@stratasystems.co.za</a>
+          <span>+27 12 000 0000</span>
+        </div>
+      </div>
+      <div>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#F7F8F5; border:1px solid #DCE7D4; padding:40px 36px">
+            <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:22px; letterSpacing:-0.01em">Enquiry sent</div>
+            <p style="margin:12px 0 0; fontSize:16px; lineHeight:1.6; color:#4A4E48">Thank you. We will reply within two business days.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display:flex; flexDirection:column; gap:20px">
+            <label style="display:flex; flexDirection:column; gap:8px">
+              <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.12em; textTransform:uppercase; color:#5C7A52">Name</span>
+              <input type="text" required="required" value="{{ nameVal }}" onChange="{{ onName }}" placeholder="Your name" style="background:#F7F8F5; border:1px solid #D3DECB; padding:14px 16px; fontFamily:Inter, sans-serif; fontSize:16px; color:#2B2B2B; outline:none" style-focus="border-color:#55B944" />
+            </label>
+            <label style="display:flex; flexDirection:column; gap:8px">
+              <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.12em; textTransform:uppercase; color:#5C7A52">Email</span>
+              <input type="email" required="required" value="{{ emailVal }}" onChange="{{ onEmail }}" placeholder="you@company.co.za" style="background:#F7F8F5; border:1px solid #D3DECB; padding:14px 16px; fontFamily:Inter, sans-serif; fontSize:16px; color:#2B2B2B; outline:none" style-focus="border-color:#55B944" />
+            </label>
+            <label style="display:flex; flexDirection:column; gap:8px">
+              <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.12em; textTransform:uppercase; color:#5C7A52">Message</span>
+              <textarea required="required" rows="5" value="{{ messageVal }}" onChange="{{ onMessage }}" placeholder="Development, stand count, timing" style="background:#F7F8F5; border:1px solid #D3DECB; padding:14px 16px; fontFamily:Inter, sans-serif; fontSize:16px; lineHeight:1.5; color:#2B2B2B; outline:none; resize:vertical" style-focus="border-color:#55B944"></textarea>
+            </label>
+            <button type="submit" style="alignSelf:start; background:#2B2B2B; color:#F7F8F5; border:none; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:16px; padding:16px 30px; cursor:pointer; clipPath:polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%)" style-hover="background:#55B944; color:#0F2A0B">Send enquiry</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="marginTop:120px; borderTop:1px solid #E0E0DC">
+    <div style="max-width:1200px; margin:0 auto; padding:64px 40px 40px; display:grid; gridTemplateColumns:minmax(0,1.2fr) repeat(3, minmax(0,1fr)); gap:48px">
+      <div>
+        <img src="assets/strata-logo.png" alt="Strata Systems" style="width:120px; height:auto; display:block; marginBottom:20px" />
+        <p style="margin:0; fontSize:14px; lineHeight:1.6; color:#5F6360; maxWidth:30ch">Utility infrastructure for high-end residential estates in South Africa.</p>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:10px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.12em; textTransform:uppercase; color:#8A8F86; marginBottom:6px">Contact</div>
+        <a href="mailto:hello@stratasystems.co.za" style="fontSize:14px; color:#4A4E48">hello@stratasystems.co.za</a>
+        <span style="fontSize:14px; color:#4A4E48">+27 12 000 0000</span>
+        <span style="fontSize:14px; color:#4A4E48">Pretoria, South Africa</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:10px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.12em; textTransform:uppercase; color:#8A8F86; marginBottom:6px">Page</div>
+        <a href="#about" style="fontSize:14px; color:#4A4E48">About</a>
+        <a href="#projects" style="fontSize:14px; color:#4A4E48">Projects</a>
+        <a href="#contact" style="fontSize:14px; color:#4A4E48">Contact</a>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:10px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.12em; textTransform:uppercase; color:#8A8F86; marginBottom:6px">Follow</div>
+        <a href="#" style="fontSize:14px; color:#4A4E48">LinkedIn</a>
+        <a href="#" style="fontSize:14px; color:#4A4E48">Instagram</a>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:0 auto; padding:24px 40px 48px; borderTop:1px solid #E0E0DC; display:flex; justifyContent:space-between; gap:24px; flexWrap:wrap">
+      <span style="fontSize:13px; color:#8A8F86">© 2026 Strata Systems (Pty) Ltd</span>
+      <span style="fontSize:13px; color:#8A8F86">Registered in South Africa</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;projectCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:6,&quot;min&quot;:3,&quot;max&quot;:9,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Projects&quot;},&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showHeroBand&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { name: '', email: '', message: '', sent: false };
+  renderVals() {
+    const count = this.props.projectCount ?? 6;
+    return {
+      showStats: this.props.showStats ?? true,
+      showHeroBand: this.props.showHeroBand ?? true,
+      upcoming: Array.from({ length: Math.max(0, count - 1) }, (_, i) => ({ num: String(i + 2).padStart(2, '0') })),
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      nameVal: this.state.name,
+      emailVal: this.state.email,
+      messageVal: this.state.message,
+      onName: e => this.setState({ name: e.target.value }),
+      onEmail: e => this.setState({ email: e.target.value }),
+      onMessage: e => this.setState({ message: e.target.value }),
+      onSubmit: e => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
