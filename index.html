@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; background: #191B19; }
+  body { margin: 0; background: #F7F8F5; color: #2B2B2B; font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #00AA1C; }
+  @keyframes dcClose { from { opacity: 1; clip-path: inset(0 0 0 0); transform: none; } to { opacity: 0; clip-path: inset(0 0 100% 0); transform: translate3d(0,-8px,0); } }
+  @keyframes dcOpen { from { opacity: 0; clip-path: inset(0 0 100% 0); transform: translate3d(0,-8px,0); } to { opacity: 1; clip-path: inset(0 0 0 0); transform: none; } }
+  ::placeholder { color: #9A9E97; }
+</style>
+</helmet>
+<div style="background:#F7F8F5">
+
+  <header style="position:sticky; top:0; z-index:60; background:#191B19">
+    <div style="max-width:1280px; margin:0 auto; padding:16px 28px; display:flex; alignItems:center; justifyContent:space-between; gap:20px; minWidth:0">
+      <a href="#top" style="display:flex; alignItems:center; gap:10px; flexShrink:0">
+        <img src="assets/logo-mark-light.png" alt="" style="height:26px; width:auto; display:block">
+        <img src="assets/logo-wordmark-light.png" alt="Strata Systems" style="height:11px; width:auto; display:block">
+      </a>
+      <nav style="display:flex; alignItems:center; gap:18px; minWidth:0; overflow:hidden">
+        <a href="#top" data-nav="top" style="fontSize:13px; fontWeight:500; letterSpacing:0.02em; whiteSpace:nowrap; transition:color 0.25s ease; color:#F4F6F1">Home</a>
+        <a href="#about" data-nav="about" style="fontSize:13px; fontWeight:500; letterSpacing:0.02em; whiteSpace:nowrap; transition:color 0.25s ease; color:#9DA39A">About us</a>
+        <a href="#services" data-nav="services" style="fontSize:13px; fontWeight:500; letterSpacing:0.02em; whiteSpace:nowrap; transition:color 0.25s ease; color:#9DA39A">Service pillars</a>
+        <a href="#projects" data-nav="projects" style="fontSize:13px; fontWeight:500; letterSpacing:0.02em; whiteSpace:nowrap; transition:color 0.25s ease; color:#9DA39A">Projects</a>
+        <a href="#team" data-nav="team" style="fontSize:13px; fontWeight:500; letterSpacing:0.02em; whiteSpace:nowrap; transition:color 0.25s ease; color:#9DA39A">Team</a>
+      </nav>
+      <a href="#contact" style="border:1px solid #3A3E38; color:#F4F6F1; fontFamily:'Space Grotesk', sans-serif; fontWeight:500; fontSize:13px; padding:10px 20px; borderRadius:999px; whiteSpace:nowrap; flexShrink:0" style-hover="background:#00AA1C; border-color:#00AA1C; color:#FFFFFF">Contact</a>
+    </div>
+  </header>
+
+  <section id="top" style="background:#191B19; minHeight:calc(100vh - 63px); display:flex; flexDirection:column; justifyContent:center; position:relative; overflow:hidden; padding:80px 0">
+    <div style="position:absolute; inset:0; backgroundImage:url(assets/pattern-dark.png); backgroundSize:260px 260px; pointerEvents:none"></div>
+    <div data-px="0.14" style="max-width:1280px; margin:0 auto; padding:0 40px; width:100%; boxSizing:border-box; position:relative; display:grid; gridTemplateColumns:minmax(0,1.5fr) minmax(0,1fr); gap:80px; alignItems:end">
+      <div>
+        <div data-reveal="" style="fontFamily:'Space Grotesk', sans-serif; fontSize:12px; fontWeight:600; letterSpacing:0.32em; textTransform:uppercase; color:#8A9086; marginBottom:34px">Utility infrastructure</div>
+        <h1 data-reveal="" style="fontFamily:'Space Grotesk', sans-serif; fontWeight:700; fontSize:clamp(44px, 6.2vw, 96px); lineHeight:0.98; letterSpacing:-0.03em; textTransform:uppercase; color:#F4F6F1; margin:0">All utilities.<br><span style="display:inline-block; color:#5ABA23; border:1.5px dashed #5ABA23; padding:2px 14px 6px; margin:6px 0">One provider.</span><br>One agreement.</h1>
+      </div>
+      <div data-reveal="" style="paddingBottom:14px">
+        <p style="margin:0; fontSize:15px; lineHeight:1.7; color:#A4AAA1; maxWidth:44ch; textWrap:pretty">Community Mobile App, Access control, Visitor Management Systems, Fibre connectivity, Electricity Water and Gas metering for residential estates in South Africa.</p>
+        <div style="display:flex; flexWrap:wrap; gap:14px; marginTop:32px">
+          <a href="#services" style="background:#00AA1C; color:#FFFFFF; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:14px; padding:14px 26px; borderRadius:999px; display:inline-flex; alignItems:center; gap:8px" style-hover="background:#008A17">Service pillars <span style="fontSize:13px">↗</span></a>
+          <a href="#contact" style="border:1px solid #3A3E38; color:#F4F6F1; fontFamily:'Space Grotesk', sans-serif; fontWeight:500; fontSize:14px; padding:14px 26px; borderRadius:999px" style-hover="border-color:#F4F6F1">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showHeroBand }}" hint-placeholder-val="{{ true }}">
+  <section style="background:#191B19; padding:0">
+    <div style="height:min(72vh, 640px); overflow:hidden">
+      <img data-px-img="0.08" src="assets/hero-gate.png" alt="Estate gatehouse at dusk" style="display:block; width:100%; height:126%; objectFit:cover; marginTop:-7%">
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="about" style="backgroundColor:#FFFFFF; padding:100px 0; position:relative; overflow:hidden">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" style="display:grid; gridTemplateColumns:minmax(0,0.72fr) minmax(0,1fr); gap:80px">
+      <div>
+        <h2 style="margin:0; paddingBottom:20px; borderBottom:1px solid #DDE1D9; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em">About us<span style="color:#00AA1C">.</span></h2>
+        <div style="display:flex; flexWrap:wrap; gap:8px; marginTop:26px; maxWidth:320px">
+          <span style="border:1px solid #D6DAD2; borderRadius:999px; padding:7px 15px; fontSize:12px; color:#5F6360">Community app</span>
+          <span style="border:1px solid #D6DAD2; borderRadius:999px; padding:7px 15px; fontSize:12px; color:#5F6360">Visitor management</span>
+          <span style="border:1px solid #D6DAD2; borderRadius:999px; padding:7px 15px; fontSize:12px; color:#5F6360">Access control</span>
+          <span style="border:1px solid #D6DAD2; borderRadius:999px; padding:7px 15px; fontSize:12px; color:#5F6360">Fibre</span>
+          <span style="border:1px solid #D6DAD2; borderRadius:999px; padding:7px 15px; fontSize:12px; color:#5F6360">Utilities</span>
+          <span style="border:1px solid #D6DAD2; borderRadius:999px; padding:7px 15px; fontSize:12px; color:#5F6360">Solar</span>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0; fontSize:26px; lineHeight:1.4; letterSpacing:-0.02em; maxWidth:44ch; textWrap:pretty">Strata consolidates the requirements of all Stakeholders in one Comprehensive Solution.</p>
+        <p style="margin:26px 0 0; fontSize:16px; lineHeight:1.7; color:#4A4E48; maxWidth:62ch; textWrap:pretty">We design, fund, build and operate the infrastructure — fibre reticulation, bulk gas, solar and storage, metering integration — and run it under a single ten-year master service agreement with the developer and the HOA. Residents deal with one provider through an official estate-branded app, verify their own consumption against the billing meter, and the HOA receives one consolidated reconciliation each month.</p>
+        <a href="#contact" style="display:inline-flex; alignItems:center; gap:8px; marginTop:34px; background:#191B19; color:#F4F6F1; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:14px; padding:14px 26px; borderRadius:999px" style-hover="background:#00AA1C; color:#FFFFFF">Discuss a development <span style="fontSize:13px">↗</span></a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="problem" style="backgroundColor:#F4F6F1; padding:100px 0; position:relative">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" onClick="{{ toggleProblem }}" style="display:grid; gridTemplateColumns:minmax(0,0.8fr) minmax(0,1fr) 28px; gap:40px; alignItems:end; cursor:pointer; paddingBottom:30px; borderBottom:1px solid #DDE1D9">
+      <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em; lineHeight:1.15">The current<br>model<span style="color:#00AA1C">.</span></h2>
+      <p style="margin:0; fontSize:20px; lineHeight:1.5; letterSpacing:-0.01em; maxWidth:56ch; textWrap:pretty">An estate typically contracts five or more separate suppliers, each with its own hardware and/or software solutions.</p>
+      <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:24px; color:#5F6360; textAlign:right">{{ signProblem }}</span>
+    </div>
+    <sc-if value="{{ openProblem }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:{{ animProblem }}">
+      <div data-reveal="" style="display:grid; gridTemplateColumns:repeat(5, minmax(0,1fr)); gap:16px; marginTop:44px">
+      <div style="background:#FFFFFF; border:1px solid #E2E5DE; borderRadius:16px; padding:24px 22px 28px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:16px; letterSpacing:-0.01em; marginBottom:10px">Access control</div>
+        <div style="fontSize:14px; lineHeight:1.55; color:#5F6360">Own contract, own hardware</div>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E2E5DE; borderRadius:16px; padding:24px 22px 28px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:16px; letterSpacing:-0.01em; marginBottom:10px">Fibre and ISP</div>
+        <div style="fontSize:14px; lineHeight:1.55; color:#5F6360">Own contract, own support line</div>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E2E5DE; borderRadius:16px; padding:24px 22px 28px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:16px; letterSpacing:-0.01em; marginBottom:10px">Backup power</div>
+        <div style="fontSize:14px; lineHeight:1.55; color:#5F6360">Own contract, per-home cost</div>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E2E5DE; borderRadius:16px; padding:24px 22px 28px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:16px; letterSpacing:-0.01em; marginBottom:10px">Gas supply</div>
+        <div style="fontSize:14px; lineHeight:1.55; color:#5F6360">Own contract, bottled delivery</div>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E2E5DE; borderRadius:16px; padding:24px 22px 28px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:16px; letterSpacing:-0.01em; marginBottom:10px">Metering and billing</div>
+        <div style="fontSize:14px; lineHeight:1.55; color:#5F6360">Own contract, own bureau</div>
+      </div>
+    </div>
+    <div data-reveal="" style="display:grid; gridTemplateColumns:repeat(3, minmax(0,1fr)); gap:16px; marginTop:16px">
+      <div style="background:#EFF1EC; borderRadius:16px; padding:26px 24px 30px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:18px; letterSpacing:-0.01em; marginBottom:10px">No accountability</div>
+        <div style="fontSize:15px; lineHeight:1.6; color:#4A4E48">A fault at the gate becomes a dispute between three suppliers.</div>
+      </div>
+      <div style="background:#EFF1EC; borderRadius:16px; padding:26px 24px 30px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:18px; letterSpacing:-0.01em; marginBottom:10px">No leverage</div>
+        <div style="fontSize:15px; lineHeight:1.6; color:#4A4E48">Levy arrears cannot be enforced through a third party's meter.</div>
+      </div>
+      <div style="background:#EFF1EC; borderRadius:16px; padding:26px 24px 30px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:18px; letterSpacing:-0.01em; marginBottom:10px">Five invoices</div>
+        <div style="fontSize:15px; lineHeight:1.6; color:#4A4E48">Reconciled by the HOA every month, by hand.</div>
+      </div>
+    </div>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section id="services" style="backgroundColor:#FFFFFF; padding:100px 0; position:relative">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" style="display:flex; alignItems:end; justifyContent:space-between; gap:40px; paddingBottom:30px; marginBottom:28px; borderBottom:1px solid #DDE1D9">
+      <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em">Integrated service pillars<span style="color:#00AA1C">.</span></h2>
+      <span style="fontSize:14px; color:#5F6360; paddingBottom:6px">Designed, funded, built and operated by Strata Systems.</span>
+    </div>
+    <div data-reveal="" style="display:flex; flexDirection:column; gap:14px">
+      <div onClick="{{ toggle0 }}" style="border:1px solid #DDE1D9; borderRadius:18px; background:#FFFFFF; padding:26px 32px; cursor:pointer" style-hover="border-color:#00AA1C">
+        <div style="display:grid; gridTemplateColumns:44px minmax(0,1.2fr) minmax(0,1.4fr) 24px; gap:24px; alignItems:center">
+          <span style="fontFamily:ui-monospace, SFMono-Regular, Menlo, monospace; fontSize:11px; color:#8A8F86">01</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:0.01em; textTransform:uppercase">Community management system</span>
+          <span style="fontSize:15px; color:#5F6360">Cloud PaaS mobile app and admin portal</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:22px; color:#5F6360; textAlign:right">{{ sign0 }}</span>
+        </div>
+        <sc-if value="{{ open0 }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:{{ animPanel0 }}; display:grid; gridTemplateColumns:44px minmax(0,1fr) 300px; gap:24px; marginTop:26px; paddingTop:26px; borderTop:1px solid #E7EAE3; alignItems:start">
+            <span></span>
+            <ul style="margin:0; paddingLeft:18px; display:flex; flexDirection:column; gap:10px; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:52ch">
+              <li>Cloud PaaS mobile app and admin portal for HOAs and residents</li>
+              <li>Centralised community communications and announcements</li>
+              <li>Facility bookings, digital help desk and workflow management</li>
+            </ul>
+            <img src="assets/paas-dashboard.png" alt="Community management system admin portal and mobile app" style="display:block; width:auto; maxWidth:100%; height:180px; objectFit:cover; borderRadius:14px; marginLeft:auto">
+          </div>
+        </sc-if>
+      </div>
+
+      <div onClick="{{ toggle1 }}" style="border:1px solid #DDE1D9; borderRadius:18px; background:#FFFFFF; padding:26px 32px; cursor:pointer" style-hover="border-color:#00AA1C">
+        <div style="display:grid; gridTemplateColumns:44px minmax(0,1.2fr) minmax(0,1.4fr) 24px; gap:24px; alignItems:center">
+          <span style="fontFamily:ui-monospace, SFMono-Regular, Menlo, monospace; fontSize:11px; color:#8A8F86">02</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:0.01em; textTransform:uppercase">Visitor management system</span>
+          <span style="fontSize:15px; color:#5F6360">Pre-clearance with OTP and instant QR codes</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:22px; color:#5F6360; textAlign:right">{{ sign1 }}</span>
+        </div>
+        <sc-if value="{{ open1 }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:{{ animPanel1 }}; display:grid; gridTemplateColumns:44px minmax(0,1fr) 300px; gap:24px; marginTop:26px; paddingTop:26px; borderTop:1px solid #E7EAE3; alignItems:start">
+            <span></span>
+            <ul style="margin:0; paddingLeft:18px; display:flex; flexDirection:column; gap:10px; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:52ch">
+              <li>Digital visitor pre-clearance with OTP and instant QR codes</li>
+              <li>Guard scanner app for SA driver's and vehicle disk scanning</li>
+              <li>Seamless WhatsApp and SMS pin code sharing for residents</li>
+            </ul>
+            <img src="assets/vms-app.jpeg" alt="Visitor management mobile app" style="display:block; width:auto; maxWidth:100%; height:180px; objectFit:cover; borderRadius:14px; margin:0 auto">
+          </div>
+        </sc-if>
+      </div>
+
+      <div onClick="{{ toggle2 }}" style="border:1px solid #DDE1D9; borderRadius:18px; background:#FFFFFF; padding:26px 32px; cursor:pointer" style-hover="border-color:#00AA1C">
+        <div style="display:grid; gridTemplateColumns:44px minmax(0,1.2fr) minmax(0,1.4fr) 24px; gap:24px; alignItems:center">
+          <span style="fontFamily:ui-monospace, SFMono-Regular, Menlo, monospace; fontSize:11px; color:#8A8F86">03</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:0.01em; textTransform:uppercase">Access control</span>
+          <span style="fontSize:15px; color:#5F6360">Facial recognition and licence-plate recognition</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:22px; color:#5F6360; textAlign:right">{{ sign2 }}</span>
+        </div>
+        <sc-if value="{{ open2 }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:{{ animPanel2 }}; display:grid; gridTemplateColumns:44px minmax(0,1fr) 300px; gap:24px; marginTop:26px; paddingTop:26px; borderTop:1px solid #E7EAE3; alignItems:start">
+            <span></span>
+            <ul style="margin:0; paddingLeft:18px; display:flex; flexDirection:column; gap:10px; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:52ch">
+              <li>Facial recognition and licence-plate recognition (LPR)</li>
+              <li>Hardware-flexible gate integration (ZKTeco and IMPRO)</li>
+              <li>Real-time exit and entry logging with automated boom control</li>
+            </ul>
+            <img src="assets/access-control.jpeg" alt="Biometric access control terminal" style="display:block; width:auto; maxWidth:100%; height:180px; objectFit:cover; borderRadius:14px; marginLeft:auto">
+          </div>
+        </sc-if>
+      </div>
+
+      <div onClick="{{ toggle3 }}" style="border:1px solid #DDE1D9; borderRadius:18px; background:#FFFFFF; padding:26px 32px; cursor:pointer" style-hover="border-color:#00AA1C">
+        <div style="display:grid; gridTemplateColumns:44px minmax(0,1.2fr) minmax(0,1.4fr) 24px; gap:24px; alignItems:center">
+          <span style="fontFamily:ui-monospace, SFMono-Regular, Menlo, monospace; fontSize:11px; color:#8A8F86">04</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:0.01em; textTransform:uppercase">Utilities: electricity, water and gas</span>
+          <span style="fontSize:15px; color:#5F6360">Unified smart metering and bulk LPG reticulation</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:22px; color:#5F6360; textAlign:right">{{ sign3 }}</span>
+        </div>
+        <sc-if value="{{ open3 }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:{{ animPanel3 }}; display:grid; gridTemplateColumns:44px minmax(0,1fr) 300px; gap:24px; marginTop:26px; paddingTop:26px; borderTop:1px solid #E7EAE3; alignItems:start">
+            <span></span>
+            <ul style="margin:0; paddingLeft:18px; display:flex; flexDirection:column; gap:10px; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:52ch">
+              <li>Unified smart metering for electricity, water and gas</li>
+              <li>Bulk LPG tank reticulation directly to every home</li>
+              <li>Real-time usage analytics and automated billing reconciliation</li>
+            </ul>
+            <img src="assets/utilities-cut.png" alt="Electricity, water and gas utilities" style="display:block; width:auto; maxWidth:100%; height:180px; objectFit:contain; margin:0 auto">
+          </div>
+        </sc-if>
+      </div>
+
+      <div onClick="{{ toggle4 }}" style="border:1px solid #DDE1D9; borderRadius:18px; background:#FFFFFF; padding:26px 32px; cursor:pointer" style-hover="border-color:#00AA1C">
+        <div style="display:grid; gridTemplateColumns:44px minmax(0,1.2fr) minmax(0,1.4fr) 24px; gap:24px; alignItems:center">
+          <span style="fontFamily:ui-monospace, SFMono-Regular, Menlo, monospace; fontSize:11px; color:#8A8F86">05</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:0.01em; textTransform:uppercase">Solar electricity</span>
+          <span style="fontSize:15px; color:#5F6360">Rooftop generation with battery backup</span>
+          <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:22px; color:#5F6360; textAlign:right">{{ sign4 }}</span>
+        </div>
+        <sc-if value="{{ open4 }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:{{ animPanel4 }}; display:grid; gridTemplateColumns:44px minmax(0,1fr) 300px; gap:24px; marginTop:26px; paddingTop:26px; borderTop:1px solid #E7EAE3; alignItems:start">
+            <span></span>
+            <ul style="margin:0; paddingLeft:18px; display:flex; flexDirection:column; gap:10px; fontSize:16px; lineHeight:1.6; color:#4A4E48; maxWidth:52ch">
+              <li>Estate-wide rooftop solar generation and inverter installations</li>
+              <li>High-capacity battery backup for load-shedding defence</li>
+              <li>Modular add-on system tailored to community energy needs</li>
+            </ul>
+            <img src="assets/solar-roofs.webp" alt="Rooftop solar panels" style="display:block; width:auto; maxWidth:100%; height:180px; objectFit:cover; borderRadius:14px; marginLeft:auto">
+          </div>
+        </sc-if>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="model" style="backgroundColor:#EDF1E7; padding:100px 0; position:relative">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" onClick="{{ toggleModel }}" style="display:flex; alignItems:center; justifyContent:space-between; gap:24px; cursor:pointer; paddingBottom:30px; borderBottom:1px solid #DDE1D9">
+      <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em">The commercial model<span style="color:#00AA1C">.</span></h2>
+      <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:24px; color:#5F6360">{{ signModel }}</span>
+    </div>
+    <sc-if value="{{ openModel }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:{{ animModel }}">
+      <div data-reveal="" style="display:grid; gridTemplateColumns:repeat(4, minmax(0,1fr)); gap:20px; marginTop:40px">
+      <div style="borderTop:2px solid #191B19; paddingTop:22px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:13px; letterSpacing:0.1em; color:#00AA1C; marginBottom:14px">01</div>
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:-0.01em; lineHeight:1.3; minHeight:50px; marginBottom:12px">Strata design, develop and build</div>
+        <p style="margin:0; fontSize:15px; lineHeight:1.65; color:#4A4E48">Fibre reticulation, bulk gas, solar and storage, metering integration. Limited capital contribution from the Developer.</p>
+      </div>
+      <div style="borderTop:2px solid #191B19; paddingTop:22px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:13px; letterSpacing:0.1em; color:#00AA1C; marginBottom:14px">02</div>
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:-0.01em; lineHeight:1.3; minHeight:50px; marginBottom:12px">The HOA signs one MSA</div>
+        <p style="margin:0; fontSize:15px; lineHeight:1.65; color:#4A4E48">A single ten-year master service agreement covering all four utilities, signed with the HOA and Developer.</p>
+      </div>
+      <div style="borderTop:2px solid #191B19; paddingTop:22px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:13px; letterSpacing:0.1em; color:#00AA1C; marginBottom:14px">03</div>
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:-0.01em; lineHeight:1.3; minHeight:50px; marginBottom:12px">Strata operates and bills</div>
+        <p style="margin:0; fontSize:15px; lineHeight:1.65; color:#4A4E48">One consolidated bulk service, metered and reconciled. Result in substantial savings for residents.</p>
+      </div>
+      <div style="borderTop:2px solid #191B19; paddingTop:22px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:13px; letterSpacing:0.1em; color:#00AA1C; marginBottom:14px">04</div>
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:-0.01em; lineHeight:1.3; minHeight:50px; marginBottom:12px">Term end</div>
+        <p style="margin:0; fontSize:15px; lineHeight:1.65; color:#4A4E48">The HOA extends the agreement or may acquire the infrastructure at market value.</p>
+      </div>
+    </div>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+  <section style="backgroundColor:#FFFFFF; padding:100px 0; position:relative">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" style="display:grid; gridTemplateColumns:minmax(0,1fr) minmax(0,1.6fr); gap:64px; alignItems:start">
+      <div>
+        <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em; lineHeight:1.15; paddingBottom:20px; borderBottom:1px solid #DDE1D9">Benefits to<br>the HOA<span style="color:#00AA1C">.</span></h2>
+        <p style="margin:16px 0 0; fontSize:15px; color:#5F6360; maxWidth:34ch; lineHeight:1.6">One provider, one agreement, every utility running through the same metering.</p>
+      </div>
+      <div style="display:grid; gridTemplateColumns:repeat(4, minmax(0,1fr)); gap:32px">
+        <div>
+          <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:30px; letterSpacing:-0.02em; whiteSpace:nowrap; lineHeight:1.2">10 yrs</div>
+          <div style="fontSize:13px; color:#5F6360; marginTop:10px; lineHeight:1.5">One master service agreement with the HOA and Developer</div>
+        </div>
+        <div>
+          <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:30px; letterSpacing:-0.02em; whiteSpace:nowrap; lineHeight:1.2">R0</div>
+          <div style="fontSize:13px; color:#5F6360; marginTop:10px; lineHeight:1.5">Capital outlay and no balance-sheet exposure for the HOA</div>
+        </div>
+        <div>
+          <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:30px; letterSpacing:-0.02em; whiteSpace:nowrap; lineHeight:1.2">One</div>
+          <div style="fontSize:13px; color:#5F6360; marginTop:10px; lineHeight:1.5">Consolidated monthly reconciliation instead of five invoices</div>
+        </div>
+        <div>
+          <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:30px; letterSpacing:-0.02em; whiteSpace:nowrap; lineHeight:1.2">Five</div>
+          <div style="fontSize:13px; color:#5F6360; marginTop:10px; lineHeight:1.5">Service pillars designed, funded, built and operated by Strata</div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal="" style="display:grid; gridTemplateColumns:repeat(2, minmax(0,1fr)); gap:20px; marginTop:20px">
+      <div style="background:#191B19; borderRadius:20px; padding:44px 40px 48px">
+        <h3 style="margin:0 0 16px; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:22px; letterSpacing:-0.01em; color:#F4F6F1">Levy enforcement at the meter</h3>
+        <p style="margin:0; fontSize:15px; lineHeight:1.7; color:#A4AAA1; maxWidth:46ch">Smart metering allows for all costs to be charged against a Home Owner's account, which means collections can be regulated and the HOA no longer has to worry about collecting outstanding bills.</p>
+      </div>
+      <div style="background:#E8F5E2; borderRadius:20px; padding:44px 40px 48px">
+        <h3 style="margin:0 0 16px; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:22px; letterSpacing:-0.01em">One number for every fault</h3>
+        <p style="margin:0; fontSize:15px; lineHeight:1.7; color:#3E4A39; maxWidth:46ch">Wi-Fi, gate, power, water or gas — the same contact person handles all of it. No triage between multiple providers, no dispute about whose fault it is, one line of accountability for an HOA.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="residents" style="backgroundColor:#F4F6F1; padding:100px 0; position:relative">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" style="display:grid; gridTemplateColumns:minmax(0,0.8fr) minmax(0,1fr); gap:80px; alignItems:start">
+      <div>
+        <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em; lineHeight:1.15; paddingBottom:20px; borderBottom:1px solid #DDE1D9">Resident<br>benefits<span style="color:#00AA1C">.</span></h2>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:28px">
+        <div style="paddingBottom:26px; borderBottom:1px solid #DDE1D9">
+          <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:22px; letterSpacing:-0.01em; marginBottom:10px">Consumption they can verify</div>
+          <p style="margin:0; fontSize:16px; lineHeight:1.65; color:#4A4E48; maxWidth:56ch">Electricity, water and gas usage in the app in real time, against the same meter we bill from.</p>
+        </div>
+        <div>
+          <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:22px; letterSpacing:-0.01em; marginBottom:10px">One provider takes responsibility</div>
+          <p style="margin:0; fontSize:16px; lineHeight:1.65; color:#4A4E48; maxWidth:56ch">Gate, fibre, power, water and gas handled by the same team.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section style="backgroundColor:#F4F6F1; padding:100px 0; position:relative">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" style="background:#191B19; borderRadius:24px; padding:56px 48px 60px; position:relative; overflow:hidden">
+      <div style="position:absolute; right:-40px; top:-120px; width:360px; height:360px; backgroundImage:url(assets/arcs-white.svg); backgroundSize:contain; backgroundRepeat:no-repeat; transform:rotate(180deg); opacity:0.09; pointerEvents:none"></div>
+      <div style="position:relative; display:grid; gridTemplateColumns:minmax(0,1fr) minmax(0,1.3fr); gap:64px; alignItems:start">
+        <div>
+          <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em; color:#F4F6F1; paddingBottom:20px; borderBottom:1px solid #35392F">The resident app<span style="color:#00AA1C">.</span></h2>
+          <p style="margin:18px 0 0; fontSize:16px; lineHeight:1.65; color:#A4AAA1; maxWidth:36ch">One login for every utility on the estate. Consumption, access, billing and support in a single place.</p>
+          <div onClick="{{ togglePhones }}" style="display:inline-flex; alignItems:center; gap:10px; marginTop:28px; border:1px solid #35392F; borderRadius:999px; padding:11px 20px; cursor:pointer; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:13px; color:#F4F6F1" style-hover="border-color:#00AA1C">{{ phonesLabel }} <span style="fontSize:16px; color:#8A9086">{{ signPhones }}</span></div>
+        </div>
+        <div style="display:grid; gridTemplateColumns:repeat(2, minmax(0,1fr)); gap:28px 40px">
+          <div>
+            <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:17px; color:#F4F6F1; marginBottom:8px">Visitor access</div>
+            <div style="fontSize:15px; lineHeight:1.6; color:#8A9086">Time-bound codes issued from the phone.</div>
+          </div>
+          <div>
+            <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:17px; color:#F4F6F1; marginBottom:8px">Live consumption</div>
+            <div style="fontSize:15px; lineHeight:1.6; color:#8A9086">Power, water and gas against the billing meter.</div>
+          </div>
+          <div>
+            <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:17px; color:#F4F6F1; marginBottom:8px">Statements</div>
+            <div style="fontSize:15px; lineHeight:1.6; color:#8A9086">Monthly reconciliation, itemised by utility.</div>
+          </div>
+          <div>
+            <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:17px; color:#F4F6F1; marginBottom:8px">Support</div>
+            <div style="fontSize:15px; lineHeight:1.6; color:#8A9086">One log-a-fault route for every utility.</div>
+          </div>
+        </div>
+      </div>
+      <sc-if value="{{ openPhones }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:{{ animPhones }}">
+      <div style="position:relative; display:flex; justifyContent:center; alignItems:flex-end; gap:40px; marginTop:52px; paddingTop:48px; borderTop:1px solid #2E312D">
+        <img src="assets/app-visitors-trim.png" alt="Resident app utilities screen" style="display:block; width:auto; height:380px; objectFit:contain">
+        <img src="assets/app-utilities-trim.png" alt="Resident app visitors screen" style="display:block; width:auto; height:380px; objectFit:contain">
+        <img src="assets/app-panic-trim.png" alt="Resident app emergency panic screen" style="display:block; width:auto; height:380px; objectFit:contain">
+      </div>
+      </div>
+      </sc-if>
+    </div>
+    </div>
+  </section>
+
+  <section id="market" style="backgroundColor:#E9EEE4; padding:100px 0; position:relative; overflow:hidden">
+    <div style="position:absolute; left:-150px; bottom:40px; width:440px; height:440px; backgroundImage:url(assets/arcs-green.svg); backgroundSize:contain; backgroundRepeat:no-repeat; transform:rotate(180deg); opacity:0.1; pointerEvents:none"></div>
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" onClick="{{ toggleMarket }}" style="display:grid; gridTemplateColumns:minmax(0,0.8fr) minmax(0,1fr) 28px; gap:40px; alignItems:end; cursor:pointer; paddingBottom:30px; borderBottom:1px solid #DDE1D9">
+      <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em; lineHeight:1.15">Market<br>opportunity<span style="color:#00AA1C">.</span></h2>
+      <p style="margin:0; fontSize:20px; lineHeight:1.5; letterSpacing:-0.01em; maxWidth:56ch; textWrap:pretty"><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" style="color: rgba(74,78,72,var(--O42jJQ,1)); caret-color: rgb(74, 78, 72); --Ys-XuQ: none; font-weight: 700; font-kerning: none;">Estates are looking for credible operators who provide reliable metering, implement efficient collections, ensure accurate billing, communicate clearly, and deliver all of this at a reasonable cost.</span></p>
+      <span style="fontFamily:'Space Grotesk', sans-serif; fontSize:24px; color:#5F6360; textAlign:right">{{ signMarket }}</span>
+    </div>
+    <sc-if value="{{ openMarket }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:{{ animMarket }}">
+      <div data-reveal="" style="display:grid; gridTemplateColumns:repeat(3, minmax(0,1fr)); gap:20px; marginTop:44px">
+      <div style="background:#FFFFFF; border:1px solid #E2E5DE; borderRadius:18px; padding:32px 30px 36px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:-0.01em; marginBottom:18px">Centralised service delivery</div>
+        <p style="margin:0 0 14px; fontSize:15px; lineHeight:1.65; color:#4A4E48"><strong style="fontWeight:600; color:#2B2B2B">Holistic utility management:</strong> estates need an integrated single-operator model rather than piecemeal, decentralised supplier attempts.</p>
+        <p style="margin:0; fontSize:15px; lineHeight:1.65; color:#4A4E48"><strong style="fontWeight:600; color:#2B2B2B">Balanced solution:</strong> solar forms a key component of the infrastructure, but long-term credibility relies on total service delivery.</p>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E2E5DE; borderRadius:18px; padding:32px 30px 36px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:-0.01em; marginBottom:18px">Precise metering and collections</div>
+        <p style="margin:0 0 14px; fontSize:15px; lineHeight:1.65; color:#4A4E48"><strong style="fontWeight:600; color:#2B2B2B">Accurate billing:</strong> high demand for operators offering dependable, transparent consumption measurement and error-free invoices.</p>
+        <p style="margin:0; fontSize:15px; lineHeight:1.65; color:#4A4E48"><strong style="fontWeight:600; color:#2B2B2B">Collection support:</strong> active assistance in levy and utility recovery ensures financial sustainability for the estate.</p>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E2E5DE; borderRadius:18px; padding:32px 30px 36px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:19px; letterSpacing:-0.01em; marginBottom:18px">Trustee relief and value</div>
+        <p style="margin:0 0 14px; fontSize:15px; lineHeight:1.65; color:#4A4E48"><strong style="fontWeight:600; color:#2B2B2B">Operational ease:</strong> removes manual reconciliations and multi-vendor friction from volunteer HOA trustees.</p>
+        <p style="margin:0; fontSize:15px; lineHeight:1.65; color:#4A4E48"><strong style="fontWeight:600; color:#2B2B2B">Resident confidence:</strong> clear communication, predictable operations and dependable service at a reasonable price.</p>
+      </div>
+    </div>
+      </div>
+      </sc-if>
+    
+    </div>
+  </section>
+
+  <section id="projects" style="backgroundColor:#FFFFFF; padding:100px 0; position:relative">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="" style="display:flex; alignItems:end; justifyContent:space-between; gap:40px; paddingBottom:28px; borderBottom:1px solid #DDE1D9">
+      <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em">Estates in the programme<span style="color:#00AA1C">.</span></h2>
+    </div>
+    <div data-reveal="" style="display:grid; gridTemplateColumns:repeat(3, minmax(0,1fr)); gap:24px; marginTop:36px">
+      <div>
+        <a href="https://www.lalucestate.co.za" target="_blank" rel="noopener noreferrer" style="display:block">
+          <img src="assets/laluc-dam.jpg" alt="La Luc Estate" style="display:block; width:100%; aspectRatio:4/3; objectFit:cover; borderRadius:16px">
+        </a>
+        <h3 style="margin:18px 0 0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:18px; letterSpacing:-0.01em">La Luc Estate</h3>
+        <div style="fontSize:14px; color:#5F6360; marginTop:6px">Franschhoek, Western Cape · 91 stands</div>
+        <div style="display:flex; flexWrap:wrap; gap:6px; marginTop:14px">
+          <span style="background:#E8F5E2; color:#2E5124; fontSize:11px; fontWeight:500; letterSpacing:0.06em; textTransform:uppercase; padding:5px 11px; borderRadius:999px">Access</span>
+          <span style="background:#E8F5E2; color:#2E5124; fontSize:11px; fontWeight:500; letterSpacing:0.06em; textTransform:uppercase; padding:5px 11px; borderRadius:999px">Fibre</span>
+          <span style="background:#E8F5E2; color:#2E5124; fontSize:11px; fontWeight:500; letterSpacing:0.06em; textTransform:uppercase; padding:5px 11px; borderRadius:999px">Solar</span>
+          <span style="background:#E8F5E2; color:#2E5124; fontSize:11px; fontWeight:500; letterSpacing:0.06em; textTransform:uppercase; padding:5px 11px; borderRadius:999px">Gas</span>
+        </div>
+      </div>
+      <div>
+        <div style="aspectRatio:4/3; backgroundColor:#EFF1EC; borderRadius:16px; position:relative; overflow:hidden; display:flex; alignItems:center; justifyContent:center">
+          <div style="position:absolute; left:-40px; bottom:-90px; width:300px; height:300px; backgroundImage:url(assets/arcs-green.svg); backgroundSize:contain; backgroundRepeat:no-repeat; opacity:0.14; pointerEvents:none"></div>
+          <span style="position:relative; fontFamily:'Space Grotesk', sans-serif; fontSize:14px; fontWeight:500; letterSpacing:0.02em; color:#5F6360">Project coming soon</span>
+        </div>
+      </div>
+      <div>
+        <div style="aspectRatio:4/3; backgroundColor:#EFF1EC; borderRadius:16px; position:relative; overflow:hidden; display:flex; alignItems:center; justifyContent:center">
+          <div style="position:absolute; right:-60px; top:-100px; width:300px; height:300px; backgroundImage:url(assets/arcs-green.svg); backgroundSize:contain; backgroundRepeat:no-repeat; transform:rotate(180deg); opacity:0.14; pointerEvents:none"></div>
+          <span style="position:relative; fontFamily:'Space Grotesk', sans-serif; fontSize:14px; fontWeight:500; letterSpacing:0.02em; color:#5F6360">Project coming soon</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="team" style="backgroundColor:#F4F6F1; padding:100px 0; position:relative">
+    <div style="max-width:1200px; margin:0 auto; padding:0 40px; position:relative">
+    <div data-reveal="">
+      <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:34px; letterSpacing:-0.02em; paddingBottom:28px; borderBottom:1px solid #DDE1D9">Team<span style="color:#00AA1C">.</span></h2>
+    </div><div data-reveal="" style="display:grid; gridTemplateColumns:repeat(3, minmax(0,1fr)); gap:24px; marginTop:40px">
+      <div>
+        <img src="assets/team-3.png" alt="Frans-Johan van Dyk" style="display:block; width:72%; aspectRatio:1/1; objectFit:cover; objectPosition:center 38%; borderRadius:16px; filter:grayscale(1)">
+        <h3 style="margin:20px 0 0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:20px; letterSpacing:-0.01em">Frans-Johan van Dyk</h3>
+        <div style="fontSize:13px; fontWeight:500; letterSpacing:0.08em; textTransform:uppercase; color:#00AA1C; marginTop:8px">Smart Systems Integrator</div>
+        <p style="margin:14px 0 0; fontSize:15px; lineHeight:1.65; color:#4A4E48">TBC</p>
+      </div>
+      <div>
+        <img src="assets/team-1.png" alt="Dr Werner Roux" style="display:block; width:72%; aspectRatio:1/1; objectFit:cover; objectPosition:center 20%; borderRadius:16px; filter:grayscale(1)">
+        <h3 style="margin:20px 0 0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:20px; letterSpacing:-0.01em">Dr Werner Roux</h3>
+        <div style="fontSize:13px; fontWeight:500; letterSpacing:0.08em; textTransform:uppercase; color:#00AA1C; marginTop:8px">TBC</div>
+        <p style="margin:14px 0 0; fontSize:15px; lineHeight:1.65; color:#4A4E48">Exclusive access to various residential estate developments, market pipeline, and capital funding expertise.</p>
+      </div>
+      <div>
+        <img src="assets/team-2.png" alt="Ricardo Cant" style="display:block; width:72%; aspectRatio:1/1; objectFit:cover; objectPosition:center 20%; borderRadius:16px; filter:grayscale(1)">
+        <h3 style="margin:20px 0 0; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:20px; letterSpacing:-0.01em">Ricardo Cant</h3>
+        <div style="fontSize:13px; fontWeight:500; letterSpacing:0.08em; textTransform:uppercase; color:#00AA1C; marginTop:8px">Central Operations Chief</div>
+        <p style="margin:14px 0 0; fontSize:15px; lineHeight:1.65; color:#4A4E48">Fibre-to-the-home (FTTH) network design, project management, sales strategy, and CRM systems.</p>
+      </div>
+    </div>
+  
+    </div>
+  </section>
+
+  <section id="contact" style="background:#191B19; position:relative; overflow:hidden">
+    <div style="position:absolute; left:-120px; bottom:-120px; width:460px; height:460px; backgroundImage:url(assets/arcs-white.svg); backgroundSize:contain; backgroundRepeat:no-repeat; opacity:0.06; pointerEvents:none"></div>
+    <div style="max-width:1200px; margin:0 auto; padding:110px 40px; position:relative; display:grid; gridTemplateColumns:minmax(0,1.1fr) minmax(0,1fr); gap:80px; alignItems:start">
+      <div data-reveal="">
+        <h2 style="margin:0; fontFamily:'Space Grotesk', sans-serif; fontWeight:700; fontSize:clamp(32px, 3.4vw, 52px); lineHeight:1.05; letterSpacing:-0.03em; textTransform:uppercase; color:#F4F6F1">Talk to us about<br>your <span style="color:#5ABA23">development</span></h2>
+        <p style="margin:26px 0 0; fontSize:15px; lineHeight:1.7; color:#A4AAA1; maxWidth:42ch; textWrap:pretty">Tell us the stand count, the phase you are in, and where utilities sit in the build programme. We will come back with an indicative scope and tariff position.</p>
+        <div style="marginTop:34px; paddingTop:26px; borderTop:1px solid #2A2E29; display:flex; flexDirection:column; gap:8px; fontSize:15px; color:#A4AAA1">
+          <a href="mailto:hello@stratasystems.co.za" style="color:#F4F6F1">hello@stratasystems.co.za</a>
+          <span>+27 12 000 0000</span>
+        </div>
+      </div>
+      <div data-reveal="" style="background:#F7F8F5; borderRadius:20px; padding:36px 34px 40px">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:22px; letterSpacing:-0.01em">Enquiry sent</div>
+            <p style="margin:12px 0 0; fontSize:16px; lineHeight:1.6; color:#4A4E48">Thank you. We will reply within two business days.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display:flex; flexDirection:column; gap:16px">
+            <input type="text" required="required" value="{{ nameVal }}" onChange="{{ onName }}" placeholder="Your name" style="background:#FFFFFF; border:1px solid #DDE1D9; borderRadius:12px; padding:15px 18px; fontFamily:Inter, sans-serif; fontSize:15px; color:#2B2B2B; outline:none" style-focus="border-color:#00AA1C">
+            <input type="email" required="required" value="{{ emailVal }}" onChange="{{ onEmail }}" placeholder="you@company.co.za" style="background:#FFFFFF; border:1px solid #DDE1D9; borderRadius:12px; padding:15px 18px; fontFamily:Inter, sans-serif; fontSize:15px; color:#2B2B2B; outline:none" style-focus="border-color:#00AA1C">
+            <textarea required="required" rows="4" value="{{ messageVal }}" onChange="{{ onMessage }}" placeholder="Development, stand count, timing" style="background:#FFFFFF; border:1px solid #DDE1D9; borderRadius:12px; padding:15px 18px; fontFamily:Inter, sans-serif; fontSize:15px; lineHeight:1.5; color:#2B2B2B; outline:none; resize:vertical" style-focus="border-color:#00AA1C"></textarea>
+            <button type="submit" style="background:#00AA1C; color:#FFFFFF; border:none; borderRadius:999px; fontFamily:'Space Grotesk', sans-serif; fontWeight:600; fontSize:15px; padding:15px 26px; cursor:pointer" style-hover="background:#008A17">Send enquiry ↗</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#191B19; borderTop:1px solid #242823">
+    <div style="max-width:1200px; margin:0 auto; padding:64px 40px 40px; display:grid; gridTemplateColumns:minmax(0,1.2fr) repeat(3, minmax(0,1fr)); gap:48px">
+      <div>
+        <div style="display:flex; alignItems:center; gap:10px; marginBottom:20px; minWidth:0">
+          <img src="assets/logo-mark-light.png" alt="" style="height:24px; width:auto; display:block; flexShrink:0">
+          <img src="assets/logo-wordmark-light.png" alt="Strata Systems" style="height:11px; width:auto; maxWidth:100%; display:block">
+        </div>
+        <p style="margin:0; fontSize:14px; lineHeight:1.6; color:#8A9086; maxWidth:32ch">Utility infrastructure for residential estates in South Africa.</p>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:10px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:11px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#6B7268; marginBottom:6px">Contact</div>
+        <a href="mailto:hello@stratasystems.co.za" style="fontSize:14px; color:#C9CEC6">hello@stratasystems.co.za</a>
+        <span style="fontSize:14px; color:#C9CEC6">+27 12 000 0000</span>
+        <span style="fontSize:14px; color:#C9CEC6">Pretoria, South Africa</span>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:10px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:11px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#6B7268; marginBottom:6px">Page</div>
+        <a href="#about" style="fontSize:14px; color:#C9CEC6">About us</a>
+        <a href="#services" style="fontSize:14px; color:#C9CEC6">Service pillars</a>
+        <a href="#projects" style="fontSize:14px; color:#C9CEC6">Projects</a>
+        <a href="#team" style="fontSize:14px; color:#C9CEC6">Team</a>
+      </div>
+      <div style="display:flex; flexDirection:column; gap:10px">
+        <div style="fontFamily:'Space Grotesk', sans-serif; fontSize:11px; fontWeight:600; letterSpacing:0.16em; textTransform:uppercase; color:#6B7268; marginBottom:6px">Follow</div>
+        <a href="#" style="fontSize:14px; color:#C9CEC6">LinkedIn</a>
+        <a href="#" style="fontSize:14px; color:#C9CEC6">Instagram</a>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:0 auto; padding:24px 40px 48px; borderTop:1px solid #242823; display:flex; justifyContent:space-between; gap:24px; flexWrap:wrap">
+      <span style="fontSize:13px; color:#6B7268">© 2026 Strata Systems (Pty) Ltd</span>
+      <span style="fontSize:13px; color:#6B7268">Registered in South Africa</span>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showHeroBand&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { name: '', email: '', message: '', sent: false, open: -1, closing: null, openProblem: false, openModel: false, openPhones: false, openMarket: false, closingProblem: false, closingModel: false, closingPhones: false, closingMarket: false };
+  _timers = [];
+  OPEN_ANIM = 'dcOpen 0.55s cubic-bezier(0.22,0.61,0.36,1) both';
+  CLOSE_ANIM = 'dcClose 0.45s cubic-bezier(0.4,0,0.7,0.2) both';
+
+  _later(fn, ms) { const t = setTimeout(fn, ms); this._timers.push(t); }
+
+  _toggleSection(key) {
+    const ck = 'closing' + key;
+    if (this.state['open' + key]) {
+      this.setState({ [ck]: true });
+      this._later(() => this.setState({ ['open' + key]: false, [ck]: false }), 450);
+    } else {
+      this.setState({ ['open' + key]: true, [ck]: false });
+    }
+  }
+
+  _togglePillar(i) {
+    if (this.state.open === i) {
+      this.setState({ closing: i });
+      this._later(() => this.setState({ open: -1, closing: null }), 450);
+    } else {
+      this.setState({ open: i, closing: null });
+    }
+  }
+
+  componentDidMount() {
+    this._raf = null;
+    const px = () => Array.from(document.querySelectorAll('[data-px], [data-px-img]'));
+    const apply = () => {
+      this._raf = null;
+      const y = window.scrollY || 0;
+      const vh = window.innerHeight || 1;
+      px().forEach(el => {
+        const rate = parseFloat(el.dataset.px || el.dataset.pxImg);
+        if (el.dataset.px) {
+          el.style.transform = 'translate3d(0,' + (y * rate * 2.2).toFixed(2) + 'px,0)';
+          el.style.opacity = String(Math.max(0, 1 - (y / (vh * 0.85))));
+        } else {
+          const r = el.parentElement.getBoundingClientRect();
+          const off = (r.top + r.height / 2 - vh / 2) * -rate * 2.6;
+          el.style.transform = 'translate3d(0,' + off.toFixed(2) + 'px,0)';
+        }
+      });
+    };
+    this._onScroll = () => { if (this._raf == null) this._raf = requestAnimationFrame(apply); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    apply();
+
+    const navLinks = Array.from(document.querySelectorAll('[data-nav]'));
+    const spy = () => {
+      const line = window.scrollY + (window.innerHeight * 0.32);
+      let active = navLinks[0];
+      navLinks.forEach(a => {
+        const sec = document.getElementById(a.dataset.nav);
+        if (sec && sec.offsetTop <= line) active = a;
+      });
+      navLinks.forEach(a => { a.style.color = a === active ? '#F4F6F1' : '#9DA39A'; });
+    };
+    this._spy = () => { if (this._spyRaf == null) this._spyRaf = requestAnimationFrame(() => { this._spyRaf = null; spy(); }); };
+    window.addEventListener('scroll', this._spy, { passive: true });
+    window.addEventListener('resize', this._spy);
+    spy();
+
+    const heads = Array.from(document.querySelectorAll('#dc-root h2'));
+    if ('IntersectionObserver' in window) {
+      heads.forEach((el, k) => {
+        const dir = k % 2 === 0 ? -1 : 1;
+        el.style.transition = 'opacity 0.85s cubic-bezier(0.22,0.61,0.36,1), transform 0.85s cubic-bezier(0.22,0.61,0.36,1)';
+        if (el.getBoundingClientRect().top > window.innerHeight * 0.9) {
+          el.style.opacity = '0';
+          el.style.transform = 'translate3d(' + (dir * 70) + 'px,0,0)';
+        }
+      });
+      this._ioH = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translate3d(0,0,0)';
+            this._ioH.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+      heads.forEach(el => this._ioH.observe(el));
+    }
+
+    const reveals = Array.from(document.querySelectorAll('[data-reveal]'));
+    if ('IntersectionObserver' in window) {
+      reveals.forEach(el => {
+        el.style.transition = 'opacity 0.75s cubic-bezier(0.22,0.61,0.36,1), transform 0.75s cubic-bezier(0.22,0.61,0.36,1)';
+        if (el.getBoundingClientRect().top > window.innerHeight * 0.92) {
+          el.style.opacity = '0';
+          el.style.transform = 'translate3d(0,34px,0)';
+        }
+      });
+      this._io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translate3d(0,0,0)';
+            this._io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+      reveals.forEach(el => this._io.observe(el));
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    window.removeEventListener('scroll', this._spy);
+    window.removeEventListener('resize', this._spy);
+    if (this._io) this._io.disconnect();
+    this._timers.forEach(clearTimeout);
+    if (this._ioH) this._ioH.disconnect();
+  }
+
+  renderVals() {
+    const open = this.state.open;
+    const closing = this.state.closing;
+    const shown = i => open === i;
+    const anim = i => (closing === i ? this.CLOSE_ANIM : this.OPEN_ANIM);
+    const set = i => () => this._togglePillar(i);
+    return {
+      showStats: this.props.showStats ?? true,
+      openProblem: this.state.openProblem,
+      openModel: this.state.openModel,
+      openPhones: this.state.openPhones,
+      openMarket: this.state.openMarket,
+      animProblem: this.state.closingProblem ? this.CLOSE_ANIM : this.OPEN_ANIM,
+      animModel: this.state.closingModel ? this.CLOSE_ANIM : this.OPEN_ANIM,
+      animPhones: this.state.closingPhones ? this.CLOSE_ANIM : this.OPEN_ANIM,
+      animMarket: this.state.closingMarket ? this.CLOSE_ANIM : this.OPEN_ANIM,
+      signProblem: this.state.openProblem && !this.state.closingProblem ? '–' : '+',
+      signModel: this.state.openModel && !this.state.closingModel ? '–' : '+',
+      signPhones: this.state.openPhones && !this.state.closingPhones ? '–' : '+',
+      signMarket: this.state.openMarket && !this.state.closingMarket ? '–' : '+',
+      phonesLabel: this.state.openPhones && !this.state.closingPhones ? 'Hide app screens' : 'View app screens',
+      toggleProblem: () => this._toggleSection('Problem'),
+      toggleModel: () => this._toggleSection('Model'),
+      togglePhones: () => this._toggleSection('Phones'),
+      toggleMarket: () => this._toggleSection('Market'),
+      showHeroBand: this.props.showHeroBand ?? true,
+      open0: shown(0), open1: shown(1), open2: shown(2), open3: shown(3), open4: shown(4),
+      animPanel0: anim(0), animPanel1: anim(1), animPanel2: anim(2), animPanel3: anim(3), animPanel4: anim(4),
+      sign0: open === 0 && closing !== 0 ? '–' : '+', sign1: open === 1 && closing !== 1 ? '–' : '+', sign2: open === 2 && closing !== 2 ? '–' : '+',
+      sign3: open === 3 && closing !== 3 ? '–' : '+', sign4: open === 4 && closing !== 4 ? '–' : '+',
+      toggle0: set(0), toggle1: set(1), toggle2: set(2), toggle3: set(3), toggle4: set(4),
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      nameVal: this.state.name,
+      emailVal: this.state.email,
+      messageVal: this.state.message,
+      onName: e => this.setState({ name: e.target.value }),
+      onEmail: e => this.setState({ email: e.target.value }),
+      onMessage: e => this.setState({ message: e.target.value }),
+      onSubmit: e => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
